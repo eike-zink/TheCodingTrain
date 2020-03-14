@@ -5,7 +5,8 @@ let d, r;           // Durchmesser (d) und Radius (r)
 let curves = [];
 
 function setup() {
-  createCanvas(320, 320);
+  createCanvas(windowWidth, windowHeight);
+  //fullscreen();
   // Anzahl der Zeilen und Spalten berechnen
   cols = width / distance;
   rows = height / distance;
