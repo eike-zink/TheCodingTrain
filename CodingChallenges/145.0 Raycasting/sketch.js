@@ -19,6 +19,6 @@ function draw() {
   let pt = ray.cast(wall);
   if (pt) {
     fill(255);
-    //ellipse(pt.x, pt.y, 8);
+    ellipse(pt.x, pt.y, 8);
   }
 }
