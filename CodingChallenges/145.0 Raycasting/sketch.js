@@ -1,24 +1,28 @@
 // Coding Challenge 145.0
 
-let wall;
-let ray;
+let walls = [];
+let partical;
+let xOff = 0, yOff = 1000;
 
 function setup() {
   createCanvas(400, 400);
-  wall = new Boundary(300, 100, 300, 300);
-  ray = new Ray(100, 200);
-
+  for (let i = 0; i < 5; i++) {
+    let a = createVector(random(width), random(height));
+    let b = createVector(random(width), random(height));
+    walls.push(new Boundary(a, b));
+  }
+  partical = new Particale();
 }
 
 function draw() {
   background(0);
-  wall.show();
-  ray.show();
-  ray.lookAt(mouseX, mouseY);
-
-  let pt = ray.cast(wall);
-  if (pt) {
-    fill(255);
-    ellipse(pt.x, pt.y, 8);
+  for (let wall of walls) {
+    wall.show();
   }
+  //partical.update(mouseX, mouseY);
+  partical.update(noise(xOff) * width, noise(yOff) * height);
+  partical.show();
+  partical.lookAt(walls);
+  xOff += 0.005;
+  yOff += 0.005 ;
 }
