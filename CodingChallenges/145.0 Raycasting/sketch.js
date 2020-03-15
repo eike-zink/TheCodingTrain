@@ -1,3 +1,5 @@
+// Coding Challenge 145.0
+
 let wall;
 let ray;
 
@@ -15,8 +17,8 @@ function draw() {
   ray.lookAt(mouseX, mouseY);
 
   let pt = ray.cast(wall);
-  //if (pt) {
-  //  fill(255);
-  //  ellipse(pt.x, pt.y, 8);
-  //}
+  if (pt) {
+    fill(255);
+    //ellipse(pt.x, pt.y, 8);
+  }
 }

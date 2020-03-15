@@ -27,7 +27,7 @@ class Ray {
     const x3 = this.pos.x;
     const y3 = this.pos.y;
     const x4 = this.pos.x + this.dir.x;
-    const y4 = this.pos.y = this.dir.y;
+    const y4 = this.pos.y - this.dir.y;
 
     const den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
 
