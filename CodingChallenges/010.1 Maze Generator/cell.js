@@ -8,16 +8,17 @@ const wall = {
 class Cell {
   static size = 40;
 
-  constructor(i, j) {
-    this.i = i;
-    this.j = j;
+  constructor(col, row) {
+    this.col = col;
+    this.row = row;
     this.walls = [true, true, true, true];
+    this.visited = false;
   }
 
   show() {
     let size = Cell.size;
-    let x = this.i * size;
-    let y = this.j * size;
+    let x = this.col * size;
+    let y = this.row * size;
     stroke(255);
     if (this.walls[wall.top]) {
       line(x, y, x+size, y);
@@ -30,6 +31,10 @@ class Cell {
     }
     if (this.walls[wall.left]) {
       line(x, y, x, y+size);
+    }
+    if (this.visited) {
+      fill(150, 100);
+      rect(x, y, size, size);
     }
   }
 }

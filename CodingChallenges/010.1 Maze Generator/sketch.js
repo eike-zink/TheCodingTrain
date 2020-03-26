@@ -1,5 +1,6 @@
 let cols, rows;
-let grid = [];
+let grid;
+let current;
 
 function setup() {
   createCanvas(400, 400);
@@ -7,17 +8,22 @@ function setup() {
   cols = floor(width / Cell.size);
   rows = floor(height / Cell.size);
 
-  for (let j = 0; j < rows; j++) {
-    for (let i = 0; i < cols; i++) {
-      let cell = new Cell(i, j);
-      grid.push(cell);
-    }
-  }
+  grid = new Grid(rows, cols);
+
+  // Startpunkt festlegen
+  current = grid.cell(0, 0);
+  frameRate(40);
 }
 
 function draw() {
   background(51);
-  for (let cell of grid) {
-    cell.show();
+  grid.show();
+
+  current.visited = true;
+
+  let next = grid.next(current);
+
+  if (next) {
+    current = next;
   }
 }
