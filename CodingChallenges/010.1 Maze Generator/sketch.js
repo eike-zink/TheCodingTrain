@@ -11,17 +11,18 @@ function setup() {
   grid = new Grid(rows, cols);
 
   // Startpunkt festlegen
-  current = grid.cell(0, 0);
-  frameRate(40);
+  current = grid.getCell(0, 0);
+  frameRate(5);
 }
 
 function draw() {
-  background(51);
+  background(50);
   grid.show();
 
+  // Aktuellen Punkt markieren
   current.visited = true;
 
-  let next = grid.next(current);
+  let next = grid.nextCell(current);
 
   if (next) {
     current = next;

@@ -18,7 +18,7 @@ class Grid {
     }
   }
 
-  cell(col, row) {
+  getCell(col, row) {
     if (col < 0 || row < 0 || col > this.cols-1 || row > this.rows-1) {
       return null;
     }
@@ -26,15 +26,16 @@ class Grid {
     return this.cells[index];
   }
 
-  next(cell) {
-    let nexts = new Array(4);
-    let col = cell.col;
-    let row = cell.row;
+  nextCell(current) {
+    let nexts = new Array();
     //
-    let top = this.cell(col, row-1);
-    let right = this.cell(col+1, row);
-    let bottom = this.cell(col, row+1);
-    let left = this.cell(col-1, row);
+    let col = current.col;
+    let row = current.row;
+    //
+    let top = this.getCell(col, row-1);
+    let right = this.getCell(col+1, row);
+    let bottom = this.getCell(col, row+1);
+    let left = this.getCell(col-1, row);
     //
     if (top && !top.visited) {
       nexts.push(top);
@@ -50,9 +51,36 @@ class Grid {
     }
     if (nexts.length > 0) {
       let r = floor(random(nexts.length));
-      return nexts[r];
+      //
+      let next = nexts[r];
+      //
+      this.removeWallsBetween(current, next);
+      //
+      current.current = false;
+      next.current = true;
+      //
+      return next;
     } else {
       return null;
+    }
+  }
+
+  removeWallsBetween(current, next) {
+    let col = current.col - next.col;
+    if (col == 1) {
+      current.walls[wall.left] = false;
+      next.walls[wall.right] = false;
+    } else if (col == -1) {
+      current.walls[wall.right] = false;
+      next.walls[wall.left] = false;
+    }
+    let row = current.row - next.row;
+    if (row == 1) {
+      current.walls[wall.top] = false;
+      next.walls[wall.bottom] = false;
+    } else if (row == -1) {
+      current.walls[wall.bottom] = false;
+      next.walls[wall.top] = false;
     }
   }
 }

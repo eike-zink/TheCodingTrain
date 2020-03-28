@@ -19,6 +19,7 @@ class Cell {
     let size = Cell.size;
     let x = this.col * size;
     let y = this.row * size;
+    //
     stroke(255);
     if (this.walls[wall.top]) {
       line(x, y, x+size, y);
@@ -32,8 +33,15 @@ class Cell {
     if (this.walls[wall.left]) {
       line(x, y, x, y+size);
     }
-    if (this.visited) {
-      fill(150, 100);
+    //
+    if (this.current) {
+      fill(200, 100);
+    }
+     else if (this.visited) {
+      fill(200, 50);
+    }
+    if (this.current || this.visited) {
+      noStroke();
       rect(x, y, size, size);
     }
   }
