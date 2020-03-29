@@ -3,19 +3,19 @@ let grid;
 let current;
 
 function setup() {
-  createCanvas(200, 200);
+  createCanvas(400, 400);
   // createCanvas(windowWidth,windowHeight)
-  Cell.size = 40;
+  Cell.size = 20;
   cols = floor(width / Cell.size);
   rows = floor(height / Cell.size);
 
-  grid = new Grid(rows, cols);
+  grid = new Grid(cols, rows);
 
   // Startpunkt festlegen
   current = grid.getCell(0, 0);
   current.visited = true;
 
-  frameRate(5);
+  // frameRate(5);
 }
 
 function draw() {

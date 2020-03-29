@@ -23,7 +23,7 @@ class Grid {
     if (col < 0 || row < 0 || col > this.cols-1 || row > this.rows-1) {
       return null;
     }
-    let index = col + (row * this.rows);
+    let index = col + (row * this.cols);
     return this.cells[index];
   }
 
@@ -56,7 +56,7 @@ class Grid {
     if (nexts.length > 0) {
       // Konnten eine weitere Zellen gefunden werden,
       // dann wähle eine aus und gib dies zurück
-      
+
       // Zuvor wird die aktuelle Zelle im Stack gesichert
       this.stack.push(current);
 
