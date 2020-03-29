@@ -4,27 +4,30 @@ let current;
 
 function setup() {
   createCanvas(400, 400);
-  Cell.size = 40;
+  // createCanvas(windowWidth,windowHeight)
+  Cell.size = 20;
   cols = floor(width / Cell.size);
   rows = floor(height / Cell.size);
 
-  grid = new Grid(rows, cols);
+  grid = new Grid(cols, rows);
 
   // Startpunkt festlegen
   current = grid.getCell(0, 0);
-  frameRate(5);
+  current.visited = true;
+
+  // frameRate(5);
 }
 
 function draw() {
   background(50);
   grid.show();
-
-  // Aktuellen Punkt markieren
-  current.visited = true;
+  current.highlight();
 
   let next = grid.nextCell(current);
 
   if (next) {
     current = next;
+  } else {
+    noLoop();
   }
 }
