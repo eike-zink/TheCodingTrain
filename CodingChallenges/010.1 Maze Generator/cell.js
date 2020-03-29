@@ -15,6 +15,10 @@ class Cell {
     this.visited = false;
   }
 
+  getPosition() {
+    return {x: this.col * Cell.size, y: this.row * Cell.size};
+  }
+
   show() {
     let size = Cell.size;
     let x = this.col * size;
@@ -33,16 +37,18 @@ class Cell {
     if (this.walls[wall.left]) {
       line(x, y, x, y+size);
     }
-    //
-    if (this.current) {
-      fill(200, 100);
-    }
-     else if (this.visited) {
-      fill(200, 50);
-    }
-    if (this.current || this.visited) {
+
+    if (this.visited) {
       noStroke();
+      fill(200, 50);
       rect(x, y, size, size);
     }
+  }
+
+  highlight() {
+    let pos = this.getPosition();
+    noStroke()
+    fill("orange");
+    rect(pos.x, pos.y, Cell.size, Cell.size);
   }
 }
