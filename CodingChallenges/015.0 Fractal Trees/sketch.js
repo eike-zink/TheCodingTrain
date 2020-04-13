@@ -24,22 +24,19 @@ function mousePressed() {
   count++;
 
   if (count < 5) {
-    for (let i = tree.length-1; i >= 0; i--) {
-      if (!tree[i].finished) {
-        let branches = tree[i].newBranches();
+    tree.forEach(branch => {
+      if (!branch.finished) {
+        let branches = branch.newBranches();
         tree.push(branches.left);
         tree.push(branches.right);
-        tree[i].finished = true;
       }
-    }
+    });
   } else {
-    if (count == 5) {
-      for (let i = 0; i < tree.length; i++) {
-        if (!tree[i].finished) {
-          let leaf = new Leave(tree[i].end.copy());
-          leaves.push(leaf);
-        }
+    tree.forEach(branch => {
+      if (!branch.finished) {
+        let leaf = new Leave(branch.end.copy());
+        leaves.push(leaf);
       }
-    }
+    });
   }
 }
