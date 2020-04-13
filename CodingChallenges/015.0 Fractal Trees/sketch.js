@@ -21,6 +21,7 @@ function mousePressed() {
       let branches = tree[i].newBranches();
       tree.push(branches.left);
       tree.push(branches.right);
+      tree[i].finished = true;
     }
   }
 }
