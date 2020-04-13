@@ -17,4 +17,12 @@ class Leave {
     this.pos.add(this.vel);
     this.acc.mult(0);
   }
+
+  set acceleration(acc) {
+    this.acc.add(createVector(0, acc));
+  }
+
+  get acceleration() {
+    return this.acc;
+  }
 }

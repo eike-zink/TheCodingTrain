@@ -1,5 +1,4 @@
 let tree = [];
-let leaves = [];
 
 let count = 0;
 
@@ -13,36 +12,36 @@ function setup() {
 
 function draw() {
   background(51);
-  // Branches anzeigen
+  // Branches und Leaves anzeigen
   tree.forEach(branch => branch.show());
-
-  // Leaves anzeigen
-  leaves.forEach(leave => {
-    leave.show();
-    leave.update()
-  });
+  // Die Position des Leaves verändern
+  tree.filter(branch => branch instanceof Leave).forEach(leave => leave.update());
 }
 
 function mousePressed() {
-  let ends = [];
+  let ends = tree.filter(branch => !branch.finished);
   count++;
 
   switch (true) {
     case (count < 5):
-      ends = tree.filter(branch => !branch.finished);
       ends.forEach(branch => {
+        branch.finished = true;
         let branches = branch.newBranches();
         tree.push(branches.left);
         tree.push(branches.right);
       });
       break;
     case (count == 5):
-      ends = tree.filter(branch => !branch.finished);
       ends.forEach(branch => {
+        branch.finished = true;
         let leaf = new Leave(branch.end.copy());
         tree.push(leaf);
       });
       break;
     default:
+      let leaves = ends.filter(brunch => brunch instanceof Leave);
+      leaves.forEach(branch => {
+        branch.acceleration = 0.5;
+      });
   }
 }

@@ -19,7 +19,6 @@ class Branch {
     let dir = p5.Vector.sub(this.end, this.begin).mult(3/4)
     let right = p5.Vector.add(this.end, dir.rotate(PI/4));
     let left = p5.Vector.add(this.end, dir.rotate(-PI/2));
-    this.finished = true;
     return {
       right: new Branch(this.end, right),
       left: new Branch(this.end, left),
