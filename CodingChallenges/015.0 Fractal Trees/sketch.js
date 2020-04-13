@@ -21,8 +21,7 @@ function draw() {
 
   // Leaves anzeigen
   for (let i = 0; i < leaves.length; i++) {
-    fill(255, 0, 100);
-    ellipse(leaves[i].x, leaves[i].y, 8, 8);
+    leaves[i].show();
   }
 }
 
@@ -42,7 +41,7 @@ function mousePressed() {
     if (count == 5) {
       for (let i = 0; i < tree.length; i++) {
         if (!tree[i].finished) {
-          let leaf = tree[i].end.copy();
+          let leaf = new Leave(tree[i].end.copy());
           leaves.push(leaf);
         }
       }
