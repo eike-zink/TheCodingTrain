@@ -17,7 +17,10 @@ function draw() {
   tree.forEach(branch => branch.show());
 
   // Leaves anzeigen
-  leaves.forEach(leave => leave.show());
+  leaves.forEach(leave => {
+    leave.show();
+    leave.update()
+  });
 }
 
 function mousePressed() {
