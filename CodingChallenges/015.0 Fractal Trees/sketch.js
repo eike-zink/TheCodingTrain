@@ -14,15 +14,10 @@ function setup() {
 function draw() {
   background(51);
   // Branches anzeigen
-  for (let i = 0; i < tree.length; i++) {
-    //tree[i].jitter();
-    tree[i].show();
-  }
+  tree.forEach(branch => branch.show());
 
   // Leaves anzeigen
-  for (let i = 0; i < leaves.length; i++) {
-    leaves[i].show();
-  }
+  leaves.forEach(leave => leave.show());
 }
 
 function mousePressed() {

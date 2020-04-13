@@ -7,6 +7,6 @@ class Leave {
 
   show() {
     fill(255, 0, 100);
-    ellipse(lthis.pos.x, this.pos.y, 8, 8);
+    ellipse(this.pos.x, this.pos.y, 8, 8);
   }
 }
