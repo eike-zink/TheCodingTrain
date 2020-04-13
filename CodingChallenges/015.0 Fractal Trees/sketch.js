@@ -11,6 +11,7 @@ function setup() {
 function draw() {
   background(51);
   for (let i = 0; i < tree.length; i++) {
+    tree[i].jitter();
     tree[i].show();
   }
 }

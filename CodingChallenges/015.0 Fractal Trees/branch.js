@@ -10,7 +10,12 @@ class Branch {
     line(this.begin.x, this.begin.y, this.end.x, this.end.y);
   }
 
-  newBranches() {
+  jitter() {
+    this.end.x += random(-1, 1);
+    this.end.y += random(-1, 1);
+  }
+
+  newBranches(jitter = false) {
     let dir = p5.Vector.sub(this.end, this.begin).mult(3/4)
     let right = p5.Vector.add(this.end, dir.rotate(PI/4));
     let left = p5.Vector.add(this.end, dir.rotate(-PI/2));
