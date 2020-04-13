@@ -24,20 +24,25 @@ function draw() {
 }
 
 function mousePressed() {
+  let ends = [];
   count++;
 
-  if (count < 5) {
-    let ends = tree.filter(branch => !branch.finished);
-    ends.forEach(branch => {
-      let branches = branch.newBranches();
-      tree.push(branches.left);
-      tree.push(branches.right);
-    });
-  } else {
-    let ends = tree.filter(branch => !branch.finished);
-    ends.forEach(branch => {
-      let leaf = new Leave(branch.end.copy());
-      leaves.push(leaf);
-    });
+  switch (true) {
+    case (count < 5):
+      ends = tree.filter(branch => !branch.finished);
+      ends.forEach(branch => {
+        let branches = branch.newBranches();
+        tree.push(branches.left);
+        tree.push(branches.right);
+      });
+      break;
+    case (count == 5):
+      ends = tree.filter(branch => !branch.finished);
+      ends.forEach(branch => {
+        let leaf = new Leave(branch.end.copy());
+        tree.push(leaf);
+      });
+      break;
+    default:
   }
 }

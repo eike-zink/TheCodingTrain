@@ -1,6 +1,7 @@
 class Leave {
   constructor(pos) {
     this.pos = pos;
+    this.finished = false;
     this.acc = createVector();
     this.vel = createVector();
   }
