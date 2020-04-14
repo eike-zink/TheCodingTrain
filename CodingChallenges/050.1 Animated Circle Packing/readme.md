@@ -1,3 +1,4 @@
 # Coding Challenge 50.1 Animated Circle Packing
 
-- [Grundlage] (https://thecodingtrain.com/CodingChallenges/050.1-circlepackinganimated.html)
+Link:
+- [Coding Challenge](https://thecodingtrain.com/CodingChallenges/050.1-circlepackinganimated.html)

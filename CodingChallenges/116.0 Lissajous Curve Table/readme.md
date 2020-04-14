@@ -1,3 +1,4 @@
 # Coding Challenge 116.0 Lissajous Curve
 
-- [Grundlage] (https://thecodingtrain.com/CodingChallenges/116-lissajous.html)
+Link:
+- [Coding Challenge](https://thecodingtrain.com/CodingChallenges/116-lissajous.html)
