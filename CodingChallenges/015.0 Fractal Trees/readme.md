@@ -1,4 +1,3 @@
-# Coding Challenge 15 Fractial tree
-Stand: 16:53min
+# Coding Challenge 15.0 Fractial tree
 
-- [Youtube] (https://www.youtube.com/watch?time_continue=19&v=fcdNSZ9IzJM&feature=emb_logo)
+- [Grundlage] (https://thecodingtrain.com/CodingChallenges/015-fractaltreearray.html)

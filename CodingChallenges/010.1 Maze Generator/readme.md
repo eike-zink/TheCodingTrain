@@ -1,6 +1,6 @@
-# Coding Challenge 10 Maze Generator
+# Coding Challenge 10.0 bis 10.4 Maze Generator
 
-- [Teil 1](https://www.youtube.com/watch?v=HyK_Q5rrcr4)
-- [Teil 2](https://www.youtube.com/watch?v=D8UgRyRnvXU)
-- [Teil 3](https://www.youtube.com/watch?v=8Ju_uxJ9v44ss)
-- [Teil 4](https://www.youtube.com/watch?v=_p5IH0L63wo)
+- [Grundlage, Teil 1](https://thecodingtrain.com/CodingChallenges/010.1-maze-dfs-p5.html)
+- [Grundlage, Teil 2](https://thecodingtrain.com/CodingChallenges/010.2-maze-dfs-p5.html)
+- [Grundlage, Teil 3](https://thecodingtrain.com/CodingChallenges/010.3-maze-dfs-p5.html)
+- [Grundlage, Teil 4](https://thecodingtrain.com/CodingChallenges/010.4-maze-dfs-p5.html)

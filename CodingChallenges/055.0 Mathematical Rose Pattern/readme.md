@@ -1,4 +1,4 @@
-# Mathematical Rose Pattern
+# Coding Challenge 55.0 Mathematical Rose Pattern
 
-- [Youtube] (https://www.youtube.com/watch?v=f5QBExMNB1I)
+- [Grundlage] (https://thecodingtrain.com/CodingChallenges/055-roses.html)
 - [Wikipedia] (https://en.wikipedia.org/wiki/Rose_(mathematics))

@@ -1,4 +1,4 @@
 # Coding Challenge 145.0 Raycasting
 
-- [Youtube](https://www.youtube.com/watch?v=TOEi6T2mtHo)
+- [Grundlage](https://thecodingtrain.com/CodingChallenges/145-2d-ray-casting.html)
 - [Wikipedia, Line-line intersection](https://en.wikipedia.org/wiki/Line–line_intersection)
