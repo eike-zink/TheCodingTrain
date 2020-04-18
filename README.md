@@ -1,7 +1,8 @@
 # The Coding Train
 Beispiele und Übungen von Daniel Shiffman aus der Serie ["The Coding Train"](https://thecodingtrain.com/CodingChallenges/)
 
-[010.1 Maze Generator](CodingChallenges/010.1 Maze Generator/readme.md)
+[010.1 Maze Generator](/CodingChallenges/010.1 Maze Generator/readme.md)
+
 - 015.0 Fractal Trees
 - 027.0 Fireworks
 - 035.1 Traveling Salesperson
