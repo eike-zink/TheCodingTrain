@@ -5,6 +5,7 @@ let canvas;
 
 function setup() {
   canvas = createCanvas(64, 64);
+  pixelDensity(1);
   frameRate(2);
 }
 
@@ -22,7 +23,7 @@ function draw() {
     stroke(random(100), random(100), random(100));
 
     translate(x, y);
-    
+
     if (i == 0) {
       circle(0, 0, r * 2);
       saveCanvas(canvas, `circle${nf(frameCount, 4, 0)}`, 'png');
@@ -39,7 +40,7 @@ function draw() {
     pop();
   }
 
-  if (frameCount == 1000) {
+  if (frameCount == 500) {
     noLoop();
   }
 }
