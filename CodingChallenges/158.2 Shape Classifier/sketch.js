@@ -5,7 +5,7 @@ let triangles = [];
 let shapeClassifier;
 
 function preload() {
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 100; i++) {
     circles[i] = loadImage(`data/circle${nf(i + 1, 4, 0)}.png`);
     squares[i] = loadImage(`data/square${nf(i + 1, 4, 0)}.png`);
     triangles[i] = loadImage(`data/triangle${nf(i + 1, 4, 0)}.png`);
